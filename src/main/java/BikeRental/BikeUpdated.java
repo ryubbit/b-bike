@@ -9,6 +9,11 @@ public class BikeUpdated extends AbstractEvent {
         super();
     }
 
+    public BikeUpdated(Bike bike){
+        this.status = "occupied";
+        bikeRepository.save(bike);
+    }
+
     public Long getId() {
         return id;
     }
@@ -16,6 +21,7 @@ public class BikeUpdated extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getStatus() {
         return status;
     }
