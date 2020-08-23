@@ -24,7 +24,6 @@ public class PolicyHandler{
         if(rentalCancelled.isMe()){
             System.out.println("##### listener RentalCancel : " + rentalCancelled.toJson());
 
-            // Listener를 통해서 호출되는 경우는 Cancel
             Bike bike = new Bike();
             bike.setId(rentalCancelled.getBikeId());
             bike.setStatus("Available");
