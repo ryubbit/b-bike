@@ -5,14 +5,19 @@ public class BikeUpdated extends AbstractEvent {
     private Long id;
     private String status;
 
+
+    // @Autowired
+    // BikeRepository bikeRepository;
+
     public BikeUpdated(){
         super();
     }
-
-    public BikeUpdated(Bike bike){
-        this.status = "occupied";
-        bikeRepository.save(bike);
-    }
+    
+    // public BikeUpdated(Bike bike){
+    //     System.out.println("#############BikeUpdated########");
+    //     // bike.setStatus(""status""); = "occupied";
+    //     // bikeRepository.save(bike);
+    // }
 
     public Long getId() {
         return id;

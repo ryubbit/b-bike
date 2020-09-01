@@ -15,18 +15,30 @@ public class Bike {
 
     @PostPersist
     public void onPostPersist(){
+
+        System.out.println("###onPostPersist###");
         BikeRegistered bikeRegistered = new BikeRegistered();
         BeanUtils.copyProperties(this, bikeRegistered);
         bikeRegistered.publishAfterCommit();
-
 
     }
 
     @PostUpdate
     public void onPostUpdate(){
+
+
+        System.out.println("###onPostUpdate###");
         BikeUpdated bikeUpdated = new BikeUpdated();
+        // bikeUpdated.setStatus("occupied");
         BeanUtils.copyProperties(this, bikeUpdated);
+
+        
+
+
+
         bikeUpdated.publishAfterCommit();
+
+
 
 
     }
