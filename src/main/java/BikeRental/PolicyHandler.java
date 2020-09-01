@@ -28,7 +28,7 @@ public class PolicyHandler{
             bike.setId(rentalCancelled.getBikeId());
             // bike.setStatus(rentalCancelled.getStatus());
 
-            bike.setStatus("ouccpied");
+            bike.setStatus("available");
             bikeRepository.save(bike);
         }
     }
