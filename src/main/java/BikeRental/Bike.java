@@ -20,26 +20,16 @@ public class Bike {
         BikeRegistered bikeRegistered = new BikeRegistered();
         BeanUtils.copyProperties(this, bikeRegistered);
         bikeRegistered.publishAfterCommit();
-
     }
 
     @PostUpdate
     public void onPostUpdate(){
 
-
         System.out.println("###onPostUpdate###");
         BikeUpdated bikeUpdated = new BikeUpdated();
         // bikeUpdated.setStatus("occupied");
         BeanUtils.copyProperties(this, bikeUpdated);
-
-        
-
-
-
         bikeUpdated.publishAfterCommit();
-
-
-
 
     }
 
@@ -48,7 +38,6 @@ public class Bike {
         BikeDeleted bikeDeleted = new BikeDeleted();
         BeanUtils.copyProperties(this, bikeDeleted);
         bikeDeleted.publishAfterCommit();
-
 
     }
 
@@ -60,6 +49,7 @@ public class Bike {
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getStatus() {
         return status;
     }
@@ -67,8 +57,6 @@ public class Bike {
     public void setStatus(String status) {
         this.status = status;
     }
-
-
 
 
 }
